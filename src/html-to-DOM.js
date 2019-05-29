@@ -10,5 +10,4 @@ function htmlToDOM(html) {
     const firstElementChild = content.firstElementChild;
     return firstElementChild;
 }
-
 export default htmlToDOM;

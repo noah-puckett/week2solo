@@ -34,5 +34,4 @@ class Component {
         oldRoot.replaceWith(newDOM);
     }
 }
-
 export default Component;
