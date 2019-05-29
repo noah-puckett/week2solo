@@ -26,7 +26,7 @@ class App extends Component {
                 avatarList.update({ avatars });
             })
             .finally(() => {
-                Loading.update({ loading: false });
+                loading.update({ loading: false });
             });
 
         return dom;
