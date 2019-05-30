@@ -21,13 +21,28 @@ class App extends Component {
         const loading = new Loading({ loading: true });
         main.appendChild(loading.render());
 
-        avatarApi.getAvatars()
-            .then(avatars => {
-                avatarList.update({ avatars });
-            })
-            .finally(() => {
-                loading.update({ loading: false });
-            });
+        
+        function loadAvatars() {
+            const params = window.location.hash.slice(1);
+            loading.update({ loading: true });
+            
+            avatarApi.getAvatars(params)
+                .then(avatars => {
+                    avatarList.update({ avatars });
+                })
+                .catch(err => {
+                    console.log(err);
+                })
+                .finally(() => {
+                    loading.update({ loading: false });
+                });
+        }
+        
+        loadAvatars();
+
+        window.addEventListener('hashchange', () => {
+            loadAvatars();
+        });
 
         return dom;
     }
