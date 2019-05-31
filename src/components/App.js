@@ -18,7 +18,7 @@ class App extends Component {
         const avatarList = new AvatarList({ avatars: [] });
         main.appendChild(avatarList.render());
 
-        const loading = new Loading({ loading: true });
+        const loading = new Loading({ loading: false });
         main.appendChild(loading.render());
 
         
