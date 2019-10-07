@@ -9,7 +9,6 @@ class AvatarList extends Component {
             const avatarItem = new AvatarItem({ avatar });
             list.appendChild(avatarItem.render());
         });
-
         return list;
     }
 
